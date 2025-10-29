@@ -19,8 +19,6 @@ import shutil
 import subprocess
 from pathlib import Path
 
-os.environ["HF_TOKEN"] = 'REDACTED_HF_TOKEN'
-
 REPO_ID = "microsoft/OmniParser-v2.0"
 ALLOW_PATTERNS = [
     "icon_detect/train_args.yaml",
