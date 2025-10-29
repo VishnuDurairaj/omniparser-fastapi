@@ -1,18 +1,3 @@
-#!/usr/bin/env python
-"""
-Download OmniParser V2 model weights into ./weights/
-
-- Downloads the YOLOv8 detector and Florence-2 caption weights from:
-  repo_id = "microsoft/OmniParser-v2.0" (Hugging Face, model repo)
-- Places files under:
-    weights/icon_detect/{model.pt, model.yaml, train_args.yaml}
-    weights/icon_caption_florence/{config.json, generation_config.json, model.safetensors}
-- Verifies presence and prints a summary with file sizes.
-
-Run:
-    python download_weights.py
-"""
-
 import os
 import sys
 import shutil
