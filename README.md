@@ -9,6 +9,6 @@ python main.py
 OR
 
 ```bash
-chmod +x setup.sh
-./setup.sh
+chmod +x chmod +x setup.sh
+./chmod +x setup.sh
 ```
