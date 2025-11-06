@@ -1,6 +1,7 @@
-torch==2.9.0
+torch==2.9.0+cu121
 easyocr==1.7.2
-torchvision==0.24.0
+torchvision==0.24.0+cu121
+torchaudio==2.6.0+cu121
 supervision==0.18.0
 openai==1.3.5
 transformers==4.49.0
@@ -33,4 +34,5 @@ groq==0.33.0
 fastapi
 uvicorn
 hf_transfer==0.1.9
+
 
