@@ -6,3 +6,9 @@ source env/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
+OR
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
