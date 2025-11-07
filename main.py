@@ -47,7 +47,7 @@ app = FastAPI(
 
 class ParseResponse(BaseModel):
     overlay_png_b64: Optional[str]
-    parsed_content_list: str
+    parsed_content_list: dict
 
 @app.get("/healthz")
 def healthz():
@@ -119,9 +119,7 @@ def _run_pipeline(
             overlay_png_b64 = base64.b64encode(dino_labeled_img_b64).decode("utf-8")
 
     # Join the parsed_content_list exactly like your demo
-    parsed_content_list_str = "\n".join(
-        [f"icon {i}: {v}" for i, v in enumerate(parsed_content_list)]
-    )
+    parsed_content_list_str = {f"icon {i}": v for i, v in enumerate(parsed_content_list)}
 
     return overlay_png_b64, parsed_content_list_str
 
@@ -160,3 +158,4 @@ async def parse_image(
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="localhost", port=22070)
+
