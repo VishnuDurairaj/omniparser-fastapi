@@ -14,3 +14,7 @@ cd omniparser-fastapi
 chmod +x setup_omniparsersh
 ./setup_omniparser.sh
 ```
+
+```bash
+pip3 install torch torchvision
+```
