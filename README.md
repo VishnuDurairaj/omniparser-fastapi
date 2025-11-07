@@ -9,6 +9,8 @@ python main.py
 OR
 
 ```bash
-chmod +x chmod +x setup.sh
-./chmod +x setup.sh
+git clone https://github.com/VishnuDurairaj/omniparser-fastapi.git
+cd omniparser-fastapi
+chmod +x setup_omniparsersh
+./setup_omniparser.sh
 ```
