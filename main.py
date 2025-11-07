@@ -227,6 +227,7 @@ def _run_pipeline(
 
     return overlay_png_b64, parsed_content_dict
 
+from starlette.concurrency import run_in_threadpool
 
 @app.post("/v1/parse", response_model=ParseResponse)
 async def parse_image(
@@ -265,12 +266,13 @@ async def parse_image(
 
     # Run pipeline
     try:
-        overlay_png_b64, parsed_content_dict = _run_pipeline(
+        overlay_png_b64, parsed_content_dict = await run_in_threadpool(
+            _run_pipeline,
             image,
-            box_threshold=box_threshold,
-            iou_threshold=iou_threshold,
-            use_paddleocr=use_paddleocr,
-            imgsz=imgsz,
+            box_threshold,
+            iou_threshold,
+            use_paddleocr,
+            imgsz,
         )
     except Exception as e:
         # Clear GPU cache on error
@@ -320,6 +322,6 @@ if __name__ == "__main__":
         reload=False,
         log_level="info",
         access_log=True,
-        limit_concurrency=10,  # Limit concurrent requests to prevent memory spikes
-        timeout_keep_alive=30,
+        # limit_concurrency=5,  # Limit concurrent requests to prevent memory spikes
+        timeout_keep_alive=5,
     )
