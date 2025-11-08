@@ -11,7 +11,7 @@ OR
 ```bash
 git clone https://github.com/VishnuDurairaj/omniparser-fastapi.git
 cd omniparser-fastapi
-chmod +x setup_omniparsersh
+chmod +x setup_omniparser.sh
 ./setup_omniparser.sh
 ```
 
