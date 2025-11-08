@@ -218,9 +218,9 @@ def _run_pipeline(
     parsed_content_dict = {}
     for i, item in enumerate(parsed_content_list):
         if isinstance(item, dict):
-            parsed_content_dict[f"element_{i}"] = item
+            parsed_content_dict[f"{item['type']}_{i}"] = item
         else:
-            parsed_content_dict[f"element_{i}"] = str(item)
+            parsed_content_dict[f"{item['type']}_{i}"] = str(item)
     
     total_time = (time.time() - start_time) * 1000
     print(f"⏱️  Total pipeline time: {total_time:.2f}ms")
