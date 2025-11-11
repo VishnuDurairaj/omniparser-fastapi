@@ -8,16 +8,16 @@ from contextlib import asynccontextmanager
 # ----------------------------
 # CRITICAL: Set threading limits BEFORE any imports
 # ----------------------------
-os.environ["OMP_NUM_THREADS"] = "4"
-os.environ["MKL_NUM_THREADS"] = "4"
-os.environ["OPENBLAS_NUM_THREADS"] = "4"
-os.environ["VECLIB_MAXIMUM_THREADS"] = "4"
-os.environ["NUMEXPR_NUM_THREADS"] = "4"
+os.environ["OMP_NUM_THREADS"] = "2"
+os.environ["MKL_NUM_THREADS"] = "2"
+os.environ["OPENBLAS_NUM_THREADS"] = "2"
+os.environ["VECLIB_MAXIMUM_THREADS"] = "2"
+os.environ["NUMEXPR_NUM_THREADS"] = "2"
 
 import torch
 
 # Set PyTorch settings immediately
-torch.set_num_threads(4)
+torch.set_num_threads(2)
 try:
     torch.set_num_interop_threads(2)
 except RuntimeError:
